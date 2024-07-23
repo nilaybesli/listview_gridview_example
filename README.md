@@ -5,6 +5,7 @@ This Flutter application demonstrates the usage of `ListView` and `GridView` wid
 - Display products in a list layout
 - Efficient list rendering with `ListView.builder` and `GridView.builder`
 - Responsive design to fit images and text properly
+- Infinite Scroll Pagination
 
 
 #Mobile
@@ -13,6 +14,13 @@ This Flutter application demonstrates the usage of `ListView` and `GridView` wid
 
 
 ![Ekran görüntüsü 2024-07-12 134326](https://github.com/user-attachments/assets/b4945f5b-80b7-477a-a4cf-0faaf1ed0393)
+
+
+![Ekran görüntüsü 2024-07-23 180106](https://github.com/user-attachments/assets/0fb8f816-6973-423e-a977-2dc8c1eb5600)
+
+
+![Ekran görüntüsü 2024-07-23 180319](https://github.com/user-attachments/assets/5dd36be2-62e1-4dd2-bd67-41b7bb5ae300)
+
 
 
 
