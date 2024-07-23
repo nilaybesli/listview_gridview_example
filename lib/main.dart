@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'screens/listview_screen.dart';
-import 'screens/gridview_screen.dart';
+import 'package:listview_gridview_example/screens/dynamic/photo_grid.dart';
+import 'package:listview_gridview_example/screens/dynamic/photo_list.dart';
+import 'package:listview_gridview_example/screens/static/gridview_screen.dart';
+import 'package:listview_gridview_example/screens/static/listview_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,9 +27,6 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Flutter ListView & GridView'),
-      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -52,6 +51,30 @@ class HomeScreen extends StatelessWidget {
                 );
               },
               child: const Text('Go to GridView'),
+            ),
+            const SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const PhotoList(),
+                  ),
+                );
+              },
+              child: const Text('Go to PhotoList'),
+            ),
+            const SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const PhotoGrid(),
+                  ),
+                );
+              },
+              child: const Text('Go to PhotoGrid'),
             ),
           ],
         ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../models/product.dart';
+import '../../models/product.dart';
 
 class ListViewScreen extends StatelessWidget {
   const ListViewScreen({super.key});
