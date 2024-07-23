@@ -20,7 +20,7 @@ class _PhotoGridState extends State<PhotoGrid> {
   Future<void> _fetchPage(int pageKey) async {
     try {
       final response = await http.get(Uri.parse(
-          'https://jsonplaceholder.typicode.com/photos?_start=$pageKey&_limit=$_pageSize'));
+          'https://jsonplaceholder.typicode.com/photos?$pageKey&$_pageSize'));
 
       if (response.statusCode == 200) {
         List<dynamic> jsonResponse = json.decode(response.body);
@@ -63,7 +63,7 @@ class _PhotoGridState extends State<PhotoGrid> {
         ),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          childAspectRatio: 0.8,
+          childAspectRatio: 0.7,
         ),
       ),
     );

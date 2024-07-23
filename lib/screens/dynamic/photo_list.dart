@@ -13,7 +13,6 @@ class PhotoList extends StatefulWidget {
 }
 
 class _PhotoListState extends State<PhotoList> {
-  late Future<List<Photo>> photos;
   static const _pageSize = 10;
   final PagingController<int, Photo> _pagingController =
       PagingController(firstPageKey: 0);
@@ -21,17 +20,18 @@ class _PhotoListState extends State<PhotoList> {
   Future<void> _fetchPage(int pageKey) async {
     try {
       final response = await http.get(Uri.parse(
-          'https://jsonplaceholder.typicode.com/photos?_start=$pageKey&_limit=$_pageSize'));
-
+          'https://jsonplaceholder.typicode.com/photos?$pageKey&$_pageSize'));
+        //https://jsonplaceholder.typicode.com/photos?5&20
       if (response.statusCode == 200) {
         List<dynamic> jsonResponse = json.decode(response.body);
         List<Photo> photos =
             jsonResponse.map((photo) => Photo.fromJson(photo)).toList();
+
         final isLastPage = photos.length < _pageSize;
         if (isLastPage) {
           _pagingController.appendLastPage(photos);
         } else {
-          final nextPageKey = pageKey + photos.length;
+          final nextPageKey = pageKey + 1;
           _pagingController.appendPage(photos, nextPageKey);
         }
       } else {
